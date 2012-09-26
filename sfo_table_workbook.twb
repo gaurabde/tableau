@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<workbook version='8.0' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <!-- build 7000.12.0913.1719                -->
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='sfo_table' inline='true' name='greenplum.41178.663627037036' version='8.0'>
+      <connection class='greenplum' dbname='ChorusAnalytics' port='5432' server='chorus-gpdb42' username='gpadmin'>
+        <relation name='2009_sfo_customer_survey' table='[analytics].[2009_sfo_customer_survey]' type='table' />
+      </connection>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='string' name='[state/country]' role='dimension' semantic-role='[State].[Name]' type='nominal'>
+      </column>
+      <column datatype='string' name='[zip]' role='dimension' semantic-role='[ZipCode].[Name]' type='nominal'>
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.4' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+          </datasources>
+          <aggregation value='true' />
+        </view>
+        <style>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text'>
+            </mark>
+            <mark class='Icon'>
+            </mark>
+            <mark class='Shape'>
+            </mark>
+            <mark class='Square'>
+            </mark>
+            <mark class='Circle'>
+            </mark>
+            <mark class='Bar'>
+            </mark>
+            <mark class='GanttBar'>
+            </mark>
+            <mark class='Line'>
+            </mark>
+            <mark class='Automatic'>
+            </mark>
+          </pane>
+        </panes>
+        <rows></rows>
+        <cols></cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows>
+    <window class='schema' hidden='false' source-height='-1' />
+    <window auto-hidden='0' class='worksheet' maximized='1' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='31'>
+            <card type='columns' />
+          </strip>
+          <strip size='31'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='144' name='Sheet 1' width='174'>
+      iVBORw0KGgoAAAANSUhEUgAAAK4AAACQCAYAAACRfFAzAAAAAXNSR0IArs4c6QAAAARnQU1B
+      AACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK0SURBVHhe7dMBDQAwCAQx/JtmAlBw
+      S6fgc3QzngIKKKCAAgoooIACnxdYT4FAgfMNA5tNVGDBhSBZANzk2YwGl4FkAXCTZzMaXAaS
+      BcBNns1ocBlIFgA3eTajwWUgWQDc5NmMBpeBZAFwk2czGlwGkgXATZ7NaHAZSBYAN3k2o8Fl
+      IFkA3OTZjAaXgWQBcJNnMxpcBpIFwE2ezWhwGUgWADd5NqPBZSBZANzk2YwGl4FkAXCTZzMa
+      XAaSBcBNns1ocBlIFgA3eTajwWUgWQDc5NmMBpeBZAFwk2czGlwGkgXATZ7NaHAZSBYAN3k2
+      o8FlIFkA3OTZjAaXgWQBcJNnMxpcBpIFwE2ezWhwGUgWADd5NqPBZSBZANzk2YwGl4FkAXCT
+      ZzMaXAaSBcBNns1ocBlIFgA3eTajwWUgWQDc5NmMBpeBZAFwk2czGlwGkgXATZ7NaHAZSBYA
+      N3k2o8FlIFkA3OTZjAaXgWQBcJNnMxpcBpIFwE2ezWhwGUgWADd5NqPBZSBZANzk2YwGl4Fk
+      AXCTZzMaXAaSBcBNns1ocBlIFgA3eTajwWUgWQDc5NmMBpeBZAFwk2czGlwGkgXATZ7NaHAZ
+      SBYAN3k2o8FlIFkA3OTZjAaXgWQBcJNnMxpcBpIFwE2ezWhwGUgWADd5NqPBZSBZANzk2YwG
+      l4FkAXCTZzMaXAaSBcBNns1ocBlIFgA3eTajwWUgWQDc5NmMBpeBZAFwk2czGlwGkgXATZ7N
+      aHAZSBYAN3k2o8FlIFkA3OTZjAaXgWQBcJNnMxpcBpIFwE2ezWhwGUgWADd5NqPBZSBZANzk
+      2YwGl4FkAXCTZzMaXAaSBcBNns1ocBlIFgA3eTajwWUgWQDc5NmMBpeBZAFwk2czGlwGkgXA
+      TZ7NaHAZSBYAN3k2o8FlIFkA3OTZjH4WDoHP5wfMAQAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
