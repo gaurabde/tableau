@@ -1,5 +1,8 @@
 ## when invoked via tablaunchjava, the current-working-directory may (likely) be different that where the user invoked tabcmd
 ## This Module and helper-routine can fixup relative paths to be from the original launch-dir
+
+require 'java'
+
 module RelativePath
   def self.fix_path(incoming)
     return nil unless incoming
