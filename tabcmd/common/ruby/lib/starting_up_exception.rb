@@ -1,0 +1,2 @@
+class StartingUpException < Exception
+end

@@ -1,0 +1,3 @@
+## this file contains the version string(s) appended to static asset files.
+## see http://wiki/bin/view/Development/BrowserCacheManagementForStaticAssets
+global_static_asset_version: 110184

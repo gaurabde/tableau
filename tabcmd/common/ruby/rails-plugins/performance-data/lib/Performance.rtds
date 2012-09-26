@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<datasource version='6.3' inline='true'>
+  <!-- build 2500.6.1109.0400 -->
+  <connection class='<%= @dbclass %>' server='<%= @host %>' dbname='<%= @database %>' port='<%= @port %>' username='<%= @username %>' password='<%= @password %>' >
+    <relation table='[<%= @schema %>].[facts]' type='table' name='facts' />
+  </connection>
+</datasource>

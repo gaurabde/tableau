@@ -1,0 +1,3 @@
+class StaticAssetException < StandardError
+
+end
