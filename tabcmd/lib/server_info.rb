@@ -1,4 +1,4 @@
-# -*- coding: raw-text -*-
+# encoding: utf-8
 # -----------------------------------------------------------------------
 # The information in this file is the property of Tableau Software and
 # is confidential.
@@ -267,7 +267,7 @@ class ServerInfo
   def raw_to_hex(raw)
     hex = ""
     0.upto(raw.length-1) do |i|
-      hex += sprintf("%0.2x", raw[i])
+      hex += sprintf("%0.2x", raw[i].ord)
     end
     hex
   end

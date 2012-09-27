@@ -15,7 +15,7 @@ require 'enumerator'
 require 'optparse'
 require 'pathname'
 require 'singleton'
-require 'rchardet'
+require 'rchardet19'
 require 'iconv'
 
 require 'multicommand/exceptions'
