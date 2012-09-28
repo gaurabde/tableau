@@ -30,7 +30,7 @@ class ServerInfo
   include Http_Util
 
   def initialize
-    @save_cookie = true
+    @save_cookie = false
     @version = {}
     @authenticity_token = ""
     @monitor = true

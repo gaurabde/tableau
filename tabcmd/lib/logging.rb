@@ -78,30 +78,30 @@ unless Tabcmd::Test
   end
 end
 
-if ENV['APPDATA']
-  log_dir =   Pathname.new(File.join(ENV['APPDATA'], 'Tableau'))
-  local_log_file = File.expand_path('tabcmd.log', log_dir)
-
-  # Make sure the log directory exists before instantiating the 
-  # file outputter
-  mkdir_p(log_dir) unless log_dir.directory?
-
-  require 'dump_reporter'
-  DumpReporter.setup("tabcmd", log_dir, false)
-
-  begin
-    TabcmdLogger.add  Log4r::FileOutputter.new('rake.log',
-                                               :filename => local_log_file,
-                                               :level => Log4r::ALL,
-                                               :formatter => p_file,
-                                               :trunc => false)
-  rescue Errno::EACCES
-    # fail gracefully if we can't write to our log file.
-    TabcmdLogger.warn "Unable to write to log file: #{local_log_file}.  Continuing without file logging."
-  end
-else
-  TabcmdLogger.warn "APPDATA environment variable is not set.  Continuing without file logging."
-end
+# if ENV['APPDATA']
+#   log_dir =   Pathname.new(File.join(ENV['APPDATA'], 'Tableau'))
+#   local_log_file = File.expand_path('tabcmd.log', log_dir)
+#
+#   # Make sure the log directory exists before instantiating the
+#   # file outputter
+#   mkdir_p(log_dir) unless log_dir.directory?
+#
+#   require 'dump_reporter'
+#   DumpReporter.setup("tabcmd", log_dir, false)
+#
+#   begin
+#     TabcmdLogger.add  Log4r::FileOutputter.new('rake.log',
+#                                                :filename => local_log_file,
+#                                                :level => Log4r::ALL,
+#                                                :formatter => p_file,
+#                                                :trunc => false)
+#   rescue Errno::EACCES
+#     # fail gracefully if we can't write to our log file.
+#     TabcmdLogger.warn "Unable to write to log file: #{local_log_file}.  Continuing without file logging."
+#   end
+# else
+#   TabcmdLogger.warn "APPDATA environment variable is not set.  Continuing without file logging."
+# end
 
 unless Tabcmd::Test
   logger.debug "\n====================================================================="

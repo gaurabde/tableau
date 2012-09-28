@@ -9,4 +9,6 @@ group :default do
   gem 'rchardet19'
   gem 'rubyzip', "~>0.9.4"
   gem 'tzinfo', '~>0.3.33'
+  gem 'vcr'
+  gem 'fakeweb'
 end
