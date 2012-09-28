@@ -21,11 +21,11 @@ describe TableauWorkbook do
           :tableau_password => 'secret',
           :db_username => 'gpadmin',
           :db_password => 'secret',
-          :db_host => 'abc',
+          :db_host => 'chorus-gpdb42',
           :db_port => 5432,
           :db_database => 'ChorusAnalytics',
-          :db_schema => 'abc',
-          :db_relname => 'tablename',
+          :db_schema => 'public',
+          :db_relname => 'TestGpfdists4',
           :name => 'new_workbook'
       })
       t.save.must_equal true
