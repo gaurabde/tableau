@@ -305,22 +305,22 @@ class ServerInfo
 
     # B45749 - in a case of a file download, the response body is saved into a file,
     # which means the response object does not have a usable body
-    if filename || relative
-      response = http.request(request){|resp|
-        if resp.is_a? Net::HTTPSuccess
-	  # figure out where to save the response.body
-          saved_filename = saved_get_filename(filename, relative, resp)
-          File.open(saved_filename,'wb'){ |f|
-            resp.read_body{ |seg|
-            f.write seg
-            }
-          }
-          logger.info "Saved #{relative} to #{saved_filename}."
-        end
-      }
-    else
+    #if filename || relative
+    #  response = http.request(request){|resp|
+    #    if resp.is_a? Net::HTTPSuccess
+    ## figure out where to save the response.body
+    #      saved_filename = saved_get_filename(filename, relative, resp)
+    #      File.open(saved_filename,'wb'){ |f|
+    #        resp.read_body{ |seg|
+    #        f.write seg
+    #        }
+    #      }
+    #      logger.info "Saved #{relative} to #{saved_filename}."
+    #    end
+    #  }
+    #else
       response = http.request(request)
-    end
+    #end
 
     case response
     when Net::HTTPSuccess

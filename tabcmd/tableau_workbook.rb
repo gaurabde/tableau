@@ -14,12 +14,21 @@ class TableauWorkbook
     @db_database = hsh[:db_database]
     @db_schema = hsh[:db_schema]
     @db_relname = hsh[:db_relname]
+    @query = TableauWorkbook.strip_trailing_semicolon(hsh[:query]) if hsh[:query]
     @name = hsh[:name]
     @errors = []
   end
 
   def errors
     @errors
+  end
+
+  def is_chorus_view?
+    @query.present?
+  end
+
+  def self.strip_trailing_semicolon(str)
+    return str.sub(/;+$/, '')
   end
 
   def save

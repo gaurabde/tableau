@@ -9,7 +9,11 @@
   <datasources>
     <datasource caption='the_name_i_gave_the_connection' inline='true' name='greenplum.41180.617203761576' version='8.0'>
       <connection class='greenplum' dbname='<%= @db_database %>' port='<%= @db_port %>' server='<%= @db_host %>' username='<%= @db_username %>'>
-        <relation name='<%= @db_relname %>' table='[<%= @db_schema %>].[<%= @db_relname %>]' type='table' />
+        <% if is_chorus_view? %>
+            <relation name='TableauSQL' type='text'><%= @query %></relation>
+        <% else %>
+            <relation name='<%= @db_relname %>' table='[<%= @db_schema %>].[<%= @db_relname %>]' type='table' />
+        <% end %>
       </connection>
       <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
         <calculation class='tableau' formula='1' />
