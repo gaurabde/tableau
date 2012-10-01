@@ -1,8 +1,16 @@
 require_relative './tabcmd_gem'
 require 'optparse'
 require 'erb'
+require 'active_model'
 
 class TableauWorkbook
+  include ActiveModel::Validations
+
+  validates_presence_of :name
+  validates_length_of :name, :minimum => 1, :maximum => 64
+
+  attr_accessor :name
+
   def initialize(hsh)
     @server = hsh[:server]
     @tableau_username = hsh[:tableau_username]
@@ -16,11 +24,6 @@ class TableauWorkbook
     @db_relname = hsh[:db_relname]
     @query = TableauWorkbook.strip_trailing_semicolon(hsh[:query]) if hsh[:query]
     @name = hsh[:name]
-    @errors = []
-  end
-
-  def errors
-    @errors
   end
 
   def is_chorus_view?
@@ -52,12 +55,10 @@ class TableauWorkbook
     s = template.result(binding)
     temp.puts s
 
-    begin
-      publish.run(opts, [temp.path])
-      true
-    rescue Exception => e
-      errors << e.message
-      false
-    end
+    publish.run(opts, [temp.path])
+    true
+  rescue Exception => e
+    errors.add(:tableau, e.message)
+    false
   end
 end

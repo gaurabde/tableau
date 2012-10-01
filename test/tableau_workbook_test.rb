@@ -8,6 +8,34 @@ VCR.configure do |c|
 end
 
 describe TableauWorkbook do
+  describe 'validations' do
+    before do
+      @valid_params = {
+          :server => '10.80.129.167',
+          :tableau_username => 'chorusadmin',
+          :tableau_password => 'secret',
+          :db_username => 'gpadmin',
+          :db_password => 'secret',
+          :db_host => 'chorus-gpdb42',
+          :db_port => 5432,
+          :db_database => 'ChorusAnalytics',
+          :db_schema => 'public',
+          :db_relname => 'TestGpfdists4'}
+    end
+
+    it 'validates presence of name' do
+      @valid_params.delete(:name)
+      t = TableauWorkbook.new(@valid_params)
+      t.valid?.must_equal false
+    end
+
+    it 'validates length of name' do
+      t = TableauWorkbook.new(@valid_params.merge!(:name => 65.times.collect{'a'}.join("")))
+      t.valid?.must_equal false
+    end
+  end
+
+
   it "sends an http request to Tableau for a table" do
     VCR.use_cassette('successful_create_table') do
       t = TableauWorkbook.new({
@@ -43,9 +71,7 @@ describe TableauWorkbook do
                                   :name => 'workbook_chorus_view'
                               })
       res = t.save
-      p t.errors
       res.must_equal true
-
     end
   end
 
@@ -71,7 +97,28 @@ describe TableauWorkbook do
                               })
       t.save.must_equal false
       t.errors.empty?.must_equal false
-      t.errors[0].must_match /bad URI/
+      t.errors.full_messages[0].must_match /bad URI/
+    end
+  end
+
+  it "does not crash if missing options" do
+    VCR.use_cassette('create_missing_options') do
+      t = TableauWorkbook.new({
+                                  :server => '',
+                                  :tableau_username => '',
+                                  :tableau_password => '',
+                                  :db_username => '',
+                                  :db_password => '',
+                                  :db_host => '',
+                                  :db_port => 5432,
+                                  :db_database => '',
+                                  :db_schema => '',
+                                  :db_relname => '',
+                                  :name => 'new_'
+                              })
+      t.save.must_equal false
+      t.errors.empty?.must_equal false
+      t.errors.full_messages[0].must_match /bad URI/
     end
   end
 end
