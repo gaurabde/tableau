@@ -2,6 +2,7 @@ require_relative './tabcmd_gem'
 require 'optparse'
 require 'erb'
 require 'active_model'
+require 'nokogiri'
 
 class TableauWorkbook
   include ActiveModel::Validations
@@ -63,14 +64,20 @@ class TableauWorkbook
   end
 
   def image_url
+
+    t = Tempfile.new('workbook_xml')
     get = MultiCommand::CommandManager.find_command('get')
     opts = OptionParser.new
     argv = ['-s', "http://#{@server}",
            '--username', @tableau_username,
-           '--password', @tableau_password]
+           '--password', @tableau_password,
+           '-f', t.path]
     MultiCommand::CommandManager.define_options(opts, argv)
     get.define_options(opts, argv)
     opts.parse!(argv)
-    get.run(opts, ["workbooks/#{name}.twb"])
+    get.run(opts, ["workbooks/#{name}.xml"])
+    doc = Nokogiri::XML.parse(t.read)
+    view_name = doc.search('view').first.search('name').text.gsub(/\s+/, '')
+    return "http://#{@server}/views/#{name}/#{view_name}.png"
   end
 end

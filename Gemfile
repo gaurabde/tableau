@@ -12,4 +12,5 @@ group :default do
   gem 'vcr'
   gem 'fakeweb'
   gem 'minitest'
+  gem 'nokogiri'
 end

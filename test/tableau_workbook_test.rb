@@ -128,7 +128,8 @@ describe TableauWorkbook do
                                :server => '10.80.129.167',
                                :tableau_username => 'chorusadmin',
                                :tableau_password => 'secret'})
-      #t.image_url.must_equal "http://10.80.129.167/views/BusinessDashboard/MarketPenetration.png"
+      t.image_url
+      t.image_url.must_equal "http://10.80.129.167/views/BusinessDashboard/AreaSalesPerformance.png"
     end
   end
 end
