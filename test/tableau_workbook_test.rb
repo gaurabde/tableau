@@ -1,4 +1,5 @@
 require 'tabcmd/tableau_workbook'
+gem 'minitest'
 require 'minitest/autorun'
 require 'vcr'
 
@@ -34,7 +35,6 @@ describe TableauWorkbook do
       t.valid?.must_equal false
     end
   end
-
 
   it "sends an http request to Tableau for a table" do
     VCR.use_cassette('successful_create_table') do
@@ -119,6 +119,16 @@ describe TableauWorkbook do
       t.save.must_equal false
       t.errors.empty?.must_equal false
       t.errors.full_messages[0].must_match /bad URI/
+    end
+  end
+
+  it "gets the first full size image view for a tableau workbook" do
+    VCR.use_cassette('get_full_size_image') do
+      t = TableauWorkbook.new({:name => 'BusinessDashboard',
+                               :server => '10.80.129.167',
+                               :tableau_username => 'chorusadmin',
+                               :tableau_password => 'secret'})
+      #t.image_url.must_equal "http://10.80.129.167/views/BusinessDashboard/MarketPenetration.png"
     end
   end
 end

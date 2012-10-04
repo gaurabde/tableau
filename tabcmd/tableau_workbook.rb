@@ -61,4 +61,16 @@ class TableauWorkbook
     errors.add(:tableau, e.message)
     false
   end
+
+  def image_url
+    get = MultiCommand::CommandManager.find_command('get')
+    opts = OptionParser.new
+    argv = ['-s', "http://#{@server}",
+           '--username', @tableau_username,
+           '--password', @tableau_password]
+    MultiCommand::CommandManager.define_options(opts, argv)
+    get.define_options(opts, argv)
+    opts.parse!(argv)
+    get.run(opts, ["workbooks/#{name}.twb"])
+  end
 end

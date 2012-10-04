@@ -11,4 +11,5 @@ group :default do
   gem 'tzinfo', '~>0.3.33'
   gem 'vcr'
   gem 'fakeweb'
+  gem 'minitest'
 end
