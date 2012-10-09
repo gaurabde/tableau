@@ -26,7 +26,7 @@ Dir[File.expand_path(__FILE__+'/../*.rb')].sort.each do |f|
   require f[TABCMD_LIB.length+1..-4] unless f =~ /tabcmd\.rb$/
 end
 
-XML_API_VERSION = '0.3'
+XML_API_VERSION = '0.31'
 
 Server = ServerInfo.new
 

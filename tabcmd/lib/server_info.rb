@@ -19,7 +19,7 @@ require 'highline/import'
 require 'json'
 
 RAILS_DEFAULT_LOGGER = logger
-POLLING_INTERVAL = 10
+POLLING_INTERVAL = 1
 RETRY_THRESHOLD = 0
 
 class ServerInfo
@@ -154,9 +154,7 @@ class ServerInfo
     # B47702 - omit the preceeding '/' from the request URL
     view_url = "views/" + workbookView
     view_response = Server.execute_request(url = view_url)
-    # B48444 - detecting if view URL contains query string, then constructing the embedded URL accordingly.
-    s = view_url.include?('?') ? '&' : '?'
-    embed_url = view_url + s + ":embed=y&:from_wg=true"
+    embed_url = view_url + "?:embed=y&:from_wg=true"
     view_response_embed = Server.execute_request(url = embed_url)
 
     def json_str_for_key(key, body)
@@ -176,9 +174,6 @@ class ServerInfo
       @sheet_id = json_str_for_key("sheetId", body)
       @locale = json_str_for_key("locale", body)
       @vizql_root = json_str_for_key("vizql_root", body)
-      # B48444 - retrieve the embed parameters from the response body
-      showParamsValue = /"?#{"showParams"}"?: ?"(.*)"/.match(body)
-      @embed_params = showParamsValue[1].gsub(/\\x/,'%') if showParamsValue && showParamsValue.length > 0
     end
 
     raise RuntimeError, "Failed to create session on server" if @vizql_session_id.nil?
@@ -186,11 +181,7 @@ class ServerInfo
     @vizql_root ? @vizql_root = "/manual#{@vizql_root}" : "/manual/vizql"
     bootstrap_url = format_method_url("bootstrapSession")
     request = create_request(url = bootstrap_url, type = 'Post')
-
-    form_params = {}
-    form_params['sheet_id'] = URI.unescape(@sheet_id) if @sheet_id
-    form_params['showParams'] = URI.unescape(@embed_params) if @embed_params
-    request.set_form_data(form_params)
+    request.set_form_data({"sheet_id" => URI.unescape(@sheet_id)}) if @sheet_id
     bootstrap_response = execute(request)
 
     if bootstrap_response
@@ -231,7 +222,7 @@ class ServerInfo
     text << "Operation Canceled." if do_raise
     msg = text.join("\n")
     # B23803.  &nbsp; comes out as two characters, number 194 and 160,
-    # which then print very oddly as "��������������􁥁���������"
+    # which then print very oddly as "��������������᥁���������"
     msg.gsub!( 194.chr + 160.chr, ' ' )
     raise msg if do_raise
     msg
@@ -273,6 +264,9 @@ class ServerInfo
   end
 
   class LoginRequired < RuntimeError
+  end
+
+  class SSLRequired < RuntimeError
   end
 
   # We only have the beginnings of https authentication here
@@ -331,6 +325,8 @@ class ServerInfo
       if location.path == '/auth/'
         raise LoginRequired, "Authorization required" unless auto_login
         return retry_after_login(request, opts)
+      elsif location.scheme == 'https'
+        raise SSLRequired, "The server only accepts HTTPS connections. Please check the server URL."
       else
         opts[:redirects] ||= 4
         raise(RuntimeError, "The server issued too many redirections") if opts[:redirects] <= 0
@@ -365,18 +361,18 @@ class ServerInfo
     display_error(response) if signal_failure
     return response
   end
-  
+
   # figure out where to save the file containing the response.body.
   def saved_get_filename(filename, relative, response)
 
 
   # If the user supplied a filename, just use it.
-    if filename 
+    if filename
       return RelativePath.fix_path(filename)
     end
 
     # if the response is an attachment, then clean up the attachment name and use that as the filename
-    if response.key?('content-disposition') 
+    if response.key?('content-disposition')
       disposition = response['content-disposition']
 
       if disposition =~ /^attachment; filename="(.+)"$/
@@ -392,11 +388,11 @@ class ServerInfo
         return RelativePath.fix_path(newfilename)
       end
     end
-      
+
     # failing any of the above, just use relative as the filename.
     return RelativePath.fix_path(File.basename(URI.parse(relative).path))
   end
-  
+
   # Invokes a server-side command with presentation model parameters.
   # Returns the result for the invoked command, automatically
   # parsing the JSON.
@@ -743,12 +739,14 @@ class ServerInfo
       else
         @site_prefix = ""
       end
-    else
+    elsif doc.elements["error/sites"]
       message = "Site not found. Please use SITEIDs from the following sites:"
       doc.elements.each("error/sites/site") {
         |e| message += "\n\nNAME: #{e.text} \nSITEID: \"#{e.attributes["id"]}\""
       }
       raise RuntimeError, message
+    else
+      raise RuntimeError, doc.elements["error/message"].text
     end
 
     success = doc.elements[1, 'successful_login']
