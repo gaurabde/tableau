@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://10.80.129.172/manual/auth?format=xml
+    uri: http://10.80.129.44/manual/auth?format=xml
     body:
       encoding: ASCII-8BIT
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 09 Oct 2012 23:30:58 GMT
+      - Wed, 10 Oct 2012 17:38:15 GMT
       server:
       - Apache-Coyote/1.1
       cache-control:
@@ -33,22 +33,22 @@ http_interactions:
       x-ua-compatible:
       - IE=Edge,chrome=1
       x-runtime:
-      - '0.109000'
+      - '0.140000'
       content-type:
       - application/xml;charset=utf-8
       content-length:
       - '7245'
       set-cookie:
-      - tableau_online_id=d1381a209a3d7b43dbf36ddc42734622; path=/; expires=Thu, 09-Oct-2014 23:30:57 GMT; HttpOnly
-      - workgroup_session_id=42221daf6ded937971bba9d3e6074a1f; path=/; HttpOnly
+      - tableau_online_id=0a944426ea5d02fe8c107cef490049ab; path=/; expires=Fri, 10-Oct-2014 17:38:15 GMT; HttpOnly
+      - workgroup_session_id=e5e5cdbf2acaa1854fd50453af3294d0; path=/; HttpOnly
       p3p:
       - CP="NON"
       connection:
       - close
     body:
       encoding: US-ASCII
-      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<authinfo>\n  <modulus>a6d1676e0158b2f20a7b325eaa648938f378a7075724051a5776fe4e84c8f2b8daffa83931bba6d38c2fafaf3a9947f4cba74e17966ffb43de13aa8f58752979</modulus>\n\
-        \  <exponent>10001</exponent>\n  <authenticity_token>qnOtK3Zyoc5ubOkOB2igR4QhrI31QSMhaGzFN179j4M=</authenticity_token>\n\
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<authinfo>\n  <modulus>a27f99ce344a79ab1798c56fc13b261d51b6bb1762ab6192c073e921b09ecce482bf58d9cf62386dab9128f19d508dfaf5df685aefeec0da8651fe2b387bda2d</modulus>\n\
+        \  <exponent>10001</exponent>\n  <authenticity_token>fE1rkptQ3d8KeAWWVzBv2Q00yLrKsX5w6AYtMw2TZAA=</authenticity_token>\n\
         \  <version version=\"0.31\">\n    <api_version>0.31</api_version>\n    <server_api_version>0.31</server_api_version>\n\
         \    <document_version>8.1</document_version>\n    <product_version>Kraken</product_version>\n\
         \    <external_version>Kraken</external_version>\n    <build>Kraken.12.0916.2030</build>\n\
@@ -130,10 +130,10 @@ http_interactions:
         \  <ssl>false</ssl>\n  <ssl_port>443</ssl_port>\n  <multi_site_enabled>false</multi_site_enabled>\n\
         </authinfo>\n"
     http_version: '1.1'
-  recorded_at: Tue, 09 Oct 2012 23:30:57 GMT
+  recorded_at: Wed, 10 Oct 2012 17:38:14 GMT
 - request:
     method: post
-    uri: http://10.80.129.172/manual/auth/login
+    uri: http://10.80.129.44/manual/auth/login
     body:
       encoding: ASCII-8BIT
       string: ''
@@ -143,9 +143,9 @@ http_interactions:
       user-agent:
       - Tabcmd
       cookie:
-      - workgroup_session_id=42221daf6ded937971bba9d3e6074a1f
+      - workgroup_session_id=e5e5cdbf2acaa1854fd50453af3294d0
       content-type:
-      - multipart/form-data; boundary=635686918174837167907913615326584045
+      - multipart/form-data; boundary=129958512969509247892971412860315552
       content-length:
       - '703'
       connection:
@@ -156,7 +156,80 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 09 Oct 2012 23:30:58 GMT
+      - Wed, 10 Oct 2012 17:38:16 GMT
+      server:
+      - Apache-Coyote/1.1
+      cache-control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      pragma:
+      - no-cache
+      expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      vary:
+      - ! '*,Accept-Encoding'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.124000'
+      content-type:
+      - application/xml;charset=utf-8
+      content-length:
+      - '1827'
+      set-cookie:
+      - tableau_online_id=0f87543e93f0da25c2eeb73f6b9ec45b; path=/; expires=Fri, 10-Oct-2014 17:38:15 GMT; HttpOnly
+      - username=; path=/
+      - workgroup_session_id=c992b8bcc931f72fcea6d2a7689e5830; path=/; HttpOnly
+      p3p:
+      - CP="NON"
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<successful_login>\n\
+        \  <user>\n    <id>5</id>\n    <site_prefix></site_prefix>\n    <site_namespace></site_namespace>\n\
+        \    <site_displayname>Default</site_displayname>\n    <name>local\\chorusadmin</name>\n\
+        \    <friendly_name>chorusadmin</friendly_name>\n    <login_at>2012-10-10\
+        \ 17:38:15 UTC</login_at>\n    <email></email>\n    <licensing_level>Interactor</licensing_level>\n\
+        \    <administrator>true</administrator>\n    <admin_type>system</admin_type>\n\
+        \    <publisher>true</publisher>\n    <raw_data_suppressor>true</raw_data_suppressor>\n\
+        \    <quotas>\n      <row_limit></row_limit>\n      <storage_limit>52428800</storage_limit>\n\
+        \      <storage_used>11588</storage_used>\n      <storage_available>52417212</storage_available>\n\
+        \      <extracts_required>0</extracts_required>\n    </quotas>\n  </user>\n\
+        \  <settings>\n    <allow_content_admins>true</allow_content_admins>\n   \
+        \ <allow_scheduling>true</allow_scheduling>\n    <embedded_credentials>true</embedded_credentials>\n\
+        \    <enable_guest>true</enable_guest>\n    <extract_engine_enabled>true</extract_engine_enabled>\n\
+        \    <language_id>en</language_id>\n    <locale_id>en_US</locale_id>\n   \
+        \ <managed_keychains>true</managed_keychains>\n    <motd></motd>\n    <public_users_list>false</public_users_list>\n\
+        \    <remember_passwords_forever>false</remember_passwords_forever>\n    <start_page>views</start_page>\n\
+        \    <webops_allow_new_account_signup>true</webops_allow_new_account_signup>\n\
+        \    <webops_allow_publishing>true</webops_allow_publishing>\n    <webops_backup_mode>false</webops_backup_mode>\n\
+        \    <webops_maintenance_mode>false</webops_maintenance_mode>\n    <view_display_setting>name</view_display_setting>\n\
+        \    <sspi_setting>false</sspi_setting>\n  </settings>\n  <authenticity_token>TVE+4L7E4s7WgCdtlQ2d4B6WFVNG9jYE+5dArgL2PhE=</authenticity_token>\n\
+        </successful_login>\n"
+    http_version: '1.1'
+  recorded_at: Wed, 10 Oct 2012 17:38:15 GMT
+- request:
+    method: get
+    uri: http://10.80.129.44/workbooks/BusinessDashboard.xml
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Tabcmd
+      cookie:
+      - workgroup_session_id=c992b8bcc931f72fcea6d2a7689e5830
+      connection:
+      - close
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 10 Oct 2012 17:38:15 GMT
       server:
       - Apache-Coyote/1.1
       cache-control:
@@ -174,82 +247,9 @@ http_interactions:
       content-type:
       - application/xml;charset=utf-8
       content-length:
-      - '1827'
+      - '3126'
       set-cookie:
-      - tableau_online_id=ece5699f61e2b3c5fbad865d08f0863e; path=/; expires=Thu, 09-Oct-2014 23:30:58 GMT; HttpOnly
-      - username=; path=/
-      - workgroup_session_id=9500233dffc62bbbf4e440d8b458dc24; path=/; HttpOnly
-      p3p:
-      - CP="NON"
-      connection:
-      - close
-    body:
-      encoding: US-ASCII
-      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<successful_login>\n\
-        \  <user>\n    <id>5</id>\n    <site_prefix></site_prefix>\n    <site_namespace></site_namespace>\n\
-        \    <site_displayname>Default</site_displayname>\n    <name>local\\chorusadmin</name>\n\
-        \    <friendly_name>chorusadmin</friendly_name>\n    <login_at>2012-10-09\
-        \ 23:30:58 UTC</login_at>\n    <email></email>\n    <licensing_level>Interactor</licensing_level>\n\
-        \    <administrator>true</administrator>\n    <admin_type>system</admin_type>\n\
-        \    <publisher>true</publisher>\n    <raw_data_suppressor>true</raw_data_suppressor>\n\
-        \    <quotas>\n      <row_limit></row_limit>\n      <storage_limit>52428800</storage_limit>\n\
-        \      <storage_used>12094</storage_used>\n      <storage_available>52416706</storage_available>\n\
-        \      <extracts_required>0</extracts_required>\n    </quotas>\n  </user>\n\
-        \  <settings>\n    <allow_content_admins>true</allow_content_admins>\n   \
-        \ <allow_scheduling>true</allow_scheduling>\n    <embedded_credentials>true</embedded_credentials>\n\
-        \    <enable_guest>true</enable_guest>\n    <extract_engine_enabled>true</extract_engine_enabled>\n\
-        \    <language_id>en</language_id>\n    <locale_id>en_US</locale_id>\n   \
-        \ <managed_keychains>true</managed_keychains>\n    <motd></motd>\n    <public_users_list>false</public_users_list>\n\
-        \    <remember_passwords_forever>false</remember_passwords_forever>\n    <start_page>views</start_page>\n\
-        \    <webops_allow_new_account_signup>true</webops_allow_new_account_signup>\n\
-        \    <webops_allow_publishing>true</webops_allow_publishing>\n    <webops_backup_mode>false</webops_backup_mode>\n\
-        \    <webops_maintenance_mode>false</webops_maintenance_mode>\n    <view_display_setting>name</view_display_setting>\n\
-        \    <sspi_setting>false</sspi_setting>\n  </settings>\n  <authenticity_token>Mg9dK15+ed7gZqMaBuWxcW5sRdfVBceA7+umLeO3PVw=</authenticity_token>\n\
-        </successful_login>\n"
-    http_version: '1.1'
-  recorded_at: Tue, 09 Oct 2012 23:30:58 GMT
-- request:
-    method: get
-    uri: http://10.80.129.172/workbooks/BusinessDashboard.xml
-    body:
-      encoding: ASCII-8BIT
-      string: ''
-    headers:
-      accept:
-      - ! '*/*'
-      user-agent:
-      - Tabcmd
-      cookie:
-      - workgroup_session_id=9500233dffc62bbbf4e440d8b458dc24
-      connection:
-      - close
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      date:
-      - Tue, 09 Oct 2012 23:30:58 GMT
-      server:
-      - Apache-Coyote/1.1
-      cache-control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      pragma:
-      - no-cache
-      expires:
-      - Thu, 01 Jan 1970 00:00:00 GMT
-      vary:
-      - ! '*,Accept-Encoding'
-      x-ua-compatible:
-      - IE=Edge,chrome=1
-      x-runtime:
-      - '0.265000'
-      content-type:
-      - application/xml;charset=utf-8
-      content-length:
-      - '3130'
-      set-cookie:
-      - tableau_online_id=4b70d3c8b48e898c6aed53b37d0f917e; path=/; expires=Thu, 09-Oct-2014 23:30:58 GMT; HttpOnly
+      - tableau_online_id=9d17a0035b553ffd0cd248f334f11eab; path=/; expires=Fri, 10-Oct-2014 17:38:16 GMT; HttpOnly
       p3p:
       - CP="NON"
       connection:
@@ -268,33 +268,33 @@ http_interactions:
         \  <display_tabs>true</display_tabs>\n  <views>\n    <view>\n      <id>35</id>\n\
         \      <name>Area Sales Performance</name>\n      <title>Area Sales Performance</title>\n\
         \      <index>0</index>\n      <repository-url>BusinessDashboard/sheets/AreaSalesPerformance</repository-url>\n\
-        \      <preview-url>http://10.80.129.172/views/BusinessDashboard/AreaSalesPerformance?:preview=y</preview-url>\n\
+        \      <preview-url>http://10.80.129.44/views/BusinessDashboard/AreaSalesPerformance?:preview=y</preview-url>\n\
         \      <updated-at>2011-11-02T19:45:38.000000Z</updated-at>\n      <created-at>2011-11-02T19:45:38.000000Z</created-at>\n\
         \      <owner>\n        <id>4</id>\n      </owner>\n      <workbook-url>BusinessDashboard</workbook-url>\n\
         \    </view>\n    <view>\n      <id>36</id>\n      <name>Sales Performance\
         \ Trends</name>\n      <title>Sales Performance Trends</title>\n      <index>1</index>\n\
         \      <repository-url>BusinessDashboard/sheets/SalesPerformanceTrends</repository-url>\n\
-        \      <preview-url>http://10.80.129.172/views/BusinessDashboard/SalesPerformanceTrends?:preview=y</preview-url>\n\
+        \      <preview-url>http://10.80.129.44/views/BusinessDashboard/SalesPerformanceTrends?:preview=y</preview-url>\n\
         \      <updated-at>2011-11-02T19:45:38.000000Z</updated-at>\n      <created-at>2011-11-02T19:45:38.000000Z</created-at>\n\
         \      <owner>\n        <id>4</id>\n      </owner>\n      <workbook-url>BusinessDashboard</workbook-url>\n\
         \    </view>\n    <view>\n      <id>37</id>\n      <name>Market Penetration</name>\n\
         \      <title>Market Penetration by City</title>\n      <index>2</index>\n\
         \      <repository-url>BusinessDashboard/sheets/MarketPenetration</repository-url>\n\
-        \      <preview-url>http://10.80.129.172/views/BusinessDashboard/MarketPenetration?:preview=y</preview-url>\n\
+        \      <preview-url>http://10.80.129.44/views/BusinessDashboard/MarketPenetration?:preview=y</preview-url>\n\
         \      <updated-at>2011-11-02T19:45:38.000000Z</updated-at>\n      <created-at>2011-11-02T19:45:38.000000Z</created-at>\n\
         \      <owner>\n        <id>4</id>\n      </owner>\n      <workbook-url>BusinessDashboard</workbook-url>\n\
         \    </view>\n    <view>\n      <id>38</id>\n      <name>Satisfaction Impact\
         \ by Segment</name>\n      <title>Satisfaction by Customer Segment</title>\n\
         \      <index>3</index>\n      <repository-url>BusinessDashboard/sheets/SatisfactionImpactbySegment</repository-url>\n\
-        \      <preview-url>http://10.80.129.172/views/BusinessDashboard/SatisfactionImpactbySegment?:preview=y</preview-url>\n\
+        \      <preview-url>http://10.80.129.44/views/BusinessDashboard/SatisfactionImpactbySegment?:preview=y</preview-url>\n\
         \      <updated-at>2011-11-02T19:45:38.000000Z</updated-at>\n      <created-at>2011-11-02T19:45:38.000000Z</created-at>\n\
         \      <owner>\n        <id>4</id>\n      </owner>\n      <workbook-url>BusinessDashboard</workbook-url>\n\
         \    </view>\n  </views>\n</workbook>\n"
     http_version: '1.1'
-  recorded_at: Tue, 09 Oct 2012 23:30:58 GMT
+  recorded_at: Wed, 10 Oct 2012 17:38:15 GMT
 - request:
     method: get
-    uri: http://10.80.129.172/workbooks/BusinessDashboard.xml
+    uri: http://10.80.129.44/workbooks/BusinessDashboard.xml
     body:
       encoding: ASCII-8BIT
       string: ''
@@ -304,7 +304,7 @@ http_interactions:
       user-agent:
       - Tabcmd
       cookie:
-      - workgroup_session_id=9500233dffc62bbbf4e440d8b458dc24
+      - workgroup_session_id=c992b8bcc931f72fcea6d2a7689e5830
       connection:
       - close
   response:
@@ -313,7 +313,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 09 Oct 2012 23:30:58 GMT
+      - Wed, 10 Oct 2012 17:38:16 GMT
       server:
       - Apache-Coyote/1.1
       cache-control:
@@ -327,13 +327,13 @@ http_interactions:
       x-ua-compatible:
       - IE=Edge,chrome=1
       x-runtime:
-      - '0.156000'
+      - '0.109000'
       content-type:
       - application/xml;charset=utf-8
       content-length:
-      - '3130'
+      - '3126'
       set-cookie:
-      - tableau_online_id=5f088c34a76016d8c505cbb25074b669; path=/; expires=Thu, 09-Oct-2014 23:30:59 GMT; HttpOnly
+      - tableau_online_id=3a7caa150983eedf3b032e4ab74d19b9; path=/; expires=Fri, 10-Oct-2014 17:38:16 GMT; HttpOnly
       p3p:
       - CP="NON"
       connection:
@@ -352,29 +352,29 @@ http_interactions:
         \  <display_tabs>true</display_tabs>\n  <views>\n    <view>\n      <id>35</id>\n\
         \      <name>Area Sales Performance</name>\n      <title>Area Sales Performance</title>\n\
         \      <index>0</index>\n      <repository-url>BusinessDashboard/sheets/AreaSalesPerformance</repository-url>\n\
-        \      <preview-url>http://10.80.129.172/views/BusinessDashboard/AreaSalesPerformance?:preview=y</preview-url>\n\
+        \      <preview-url>http://10.80.129.44/views/BusinessDashboard/AreaSalesPerformance?:preview=y</preview-url>\n\
         \      <updated-at>2011-11-02T19:45:38.000000Z</updated-at>\n      <created-at>2011-11-02T19:45:38.000000Z</created-at>\n\
         \      <owner>\n        <id>4</id>\n      </owner>\n      <workbook-url>BusinessDashboard</workbook-url>\n\
         \    </view>\n    <view>\n      <id>36</id>\n      <name>Sales Performance\
         \ Trends</name>\n      <title>Sales Performance Trends</title>\n      <index>1</index>\n\
         \      <repository-url>BusinessDashboard/sheets/SalesPerformanceTrends</repository-url>\n\
-        \      <preview-url>http://10.80.129.172/views/BusinessDashboard/SalesPerformanceTrends?:preview=y</preview-url>\n\
+        \      <preview-url>http://10.80.129.44/views/BusinessDashboard/SalesPerformanceTrends?:preview=y</preview-url>\n\
         \      <updated-at>2011-11-02T19:45:38.000000Z</updated-at>\n      <created-at>2011-11-02T19:45:38.000000Z</created-at>\n\
         \      <owner>\n        <id>4</id>\n      </owner>\n      <workbook-url>BusinessDashboard</workbook-url>\n\
         \    </view>\n    <view>\n      <id>37</id>\n      <name>Market Penetration</name>\n\
         \      <title>Market Penetration by City</title>\n      <index>2</index>\n\
         \      <repository-url>BusinessDashboard/sheets/MarketPenetration</repository-url>\n\
-        \      <preview-url>http://10.80.129.172/views/BusinessDashboard/MarketPenetration?:preview=y</preview-url>\n\
+        \      <preview-url>http://10.80.129.44/views/BusinessDashboard/MarketPenetration?:preview=y</preview-url>\n\
         \      <updated-at>2011-11-02T19:45:38.000000Z</updated-at>\n      <created-at>2011-11-02T19:45:38.000000Z</created-at>\n\
         \      <owner>\n        <id>4</id>\n      </owner>\n      <workbook-url>BusinessDashboard</workbook-url>\n\
         \    </view>\n    <view>\n      <id>38</id>\n      <name>Satisfaction Impact\
         \ by Segment</name>\n      <title>Satisfaction by Customer Segment</title>\n\
         \      <index>3</index>\n      <repository-url>BusinessDashboard/sheets/SatisfactionImpactbySegment</repository-url>\n\
-        \      <preview-url>http://10.80.129.172/views/BusinessDashboard/SatisfactionImpactbySegment?:preview=y</preview-url>\n\
+        \      <preview-url>http://10.80.129.44/views/BusinessDashboard/SatisfactionImpactbySegment?:preview=y</preview-url>\n\
         \      <updated-at>2011-11-02T19:45:38.000000Z</updated-at>\n      <created-at>2011-11-02T19:45:38.000000Z</created-at>\n\
         \      <owner>\n        <id>4</id>\n      </owner>\n      <workbook-url>BusinessDashboard</workbook-url>\n\
         \    </view>\n  </views>\n</workbook>\n"
     http_version: '1.1'
-  recorded_at: Tue, 09 Oct 2012 23:30:59 GMT
+  recorded_at: Wed, 10 Oct 2012 17:38:16 GMT
 recorded_with: VCR 2.1.1
 ...

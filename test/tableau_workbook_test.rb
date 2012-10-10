@@ -50,7 +50,7 @@ describe TableauWorkbook do
           :db_port => 5432,
           :db_database => 'ChorusAnalytics',
           :db_schema => 'public',
-          :db_relname => 'TestGpfdists4',
+          :db_relname => 'top_1_000_songs_to_hear_before_you_die',
           :name => 'new_workbook'
       })
       t.save.must_equal true
