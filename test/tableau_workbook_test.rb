@@ -3,6 +3,8 @@ gem 'minitest'
 require 'minitest/autorun'
 require 'vcr'
 
+TABLEAU_SERVER_IP='10.80.129.44'
+
 VCR.configure do |c|
   c.cassette_library_dir = 'fixtures/vcr_cassettes'
   c.hook_into :fakeweb
@@ -12,7 +14,7 @@ describe TableauWorkbook do
   describe 'validations' do
     before do
       @valid_params = {
-          :server => '10.80.129.172',
+          :server => TABLEAU_SERVER_IP,
           :tableau_username => 'chorusadmin',
           :tableau_password => 'secret',
           :db_username => 'gpadmin',
@@ -39,7 +41,7 @@ describe TableauWorkbook do
   it "sends an http request to Tableau for a table" do
     VCR.use_cassette('successful_create_table') do
       t = TableauWorkbook.new({
-          :server => '10.80.129.172',
+          :server => TABLEAU_SERVER_IP,
           :tableau_username => 'chorusadmin',
           :tableau_password => 'secret',
           :db_username => 'gpadmin',
@@ -58,7 +60,7 @@ describe TableauWorkbook do
   it "sends an http request to Tableau for a chorus view" do
     VCR.use_cassette('successful_create_chorus_view') do
       t = TableauWorkbook.new({
-                                  :server => '10.80.129.172',
+                                  :server => TABLEAU_SERVER_IP,
                                   :tableau_username => 'chorusadmin',
                                   :tableau_password => 'secret',
                                   :db_username => 'gpadmin',
@@ -125,11 +127,11 @@ describe TableauWorkbook do
   it "gets the first full size image view for a tableau workbook" do
     VCR.use_cassette('get_full_size_image') do
       t = TableauWorkbook.new({:name => 'BusinessDashboard',
-                               :server => '10.80.129.172',
+                               :server => TABLEAU_SERVER_IP,
                                :tableau_username => 'chorusadmin',
                                :tableau_password => 'secret'})
       t.image_url
-      t.image_url.must_equal "http://10.80.129.172/views/BusinessDashboard/AreaSalesPerformance.png"
+      t.image_url.must_equal "http://#{TABLEAU_SERVER_IP}/views/BusinessDashboard/AreaSalesPerformance.png"
     end
   end
 end
