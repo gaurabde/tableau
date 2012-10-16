@@ -12,7 +12,7 @@ http_interactions:
       user-agent:
       - Tabcmd
       cookie:
-      - workgroup_session_id=c992b8bcc931f72fcea6d2a7689e5830
+      - workgroup_session_id=4b3bd3f23da7de0ae26f005c12451a3c
       connection:
       - close
   response:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Wed, 10 Oct 2012 17:38:17 GMT
+      - Tue, 16 Oct 2012 21:39:45 GMT
       server:
       - Apache-Coyote/1.1
       cache-control:
@@ -35,13 +35,13 @@ http_interactions:
       x-ua-compatible:
       - IE=Edge,chrome=1
       x-runtime:
-      - '0.050000'
+      - '0.049000'
       content-type:
       - application/xml;charset=utf-8
       content-length:
       - '272'
       set-cookie:
-      - tableau_online_id=4e0ec6934cf46405894e5a3d1a2cc7a2; path=/; expires=Fri, 10-Oct-2014 17:38:17 GMT; HttpOnly
+      - tableau_online_id=21f6af3e666ec738f25aa5febfe99749; path=/; expires=Thu, 16-Oct-2014 21:39:45 GMT; HttpOnly
       p3p:
       - CP="NON"
       connection:
@@ -49,10 +49,10 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<keyinfo>\n  <keyname>publish_key</keyname>\n\
-        \  <modulus>903bbcd3932c8b84079486505187b8c27c498d901abcd6811a88d6b770e421d8b119b67d9f80fbcab8bde9b3ae9438f690df9788db3bff2a572ec8c89e6de8a3</modulus>\n\
+        \  <modulus>8d9e277569dcaca921f524b52bda495b7606294d1657648af1f74d42c00bf0486f7fe22ce80b6f89b0a097d24cab40fc1ce795ab291214b5d9f8e8d88be9351f</modulus>\n\
         \  <exponent>10001</exponent>\n</keyinfo>\n"
     http_version: '1.1'
-  recorded_at: Wed, 10 Oct 2012 17:38:17 GMT
+  recorded_at: Tue, 16 Oct 2012 21:39:42 GMT
 - request:
     method: post
     uri: http://10.80.129.44/manual/create/workbooks.xml
@@ -65,9 +65,9 @@ http_interactions:
       user-agent:
       - Tabcmd
       cookie:
-      - workgroup_session_id=c992b8bcc931f72fcea6d2a7689e5830
+      - workgroup_session_id=4b3bd3f23da7de0ae26f005c12451a3c
       content-type:
-      - multipart/form-data; boundary=424819721547538031912550425414911229
+      - multipart/form-data; boundary=259293874735634520749081096473128551
       content-length:
       - '5558'
       connection:
@@ -78,7 +78,7 @@ http_interactions:
       message: Created
     headers:
       date:
-      - Wed, 10 Oct 2012 17:38:17 GMT
+      - Tue, 16 Oct 2012 21:39:45 GMT
       server:
       - Apache-Coyote/1.1
       cache-control:
@@ -92,13 +92,13 @@ http_interactions:
       x-ua-compatible:
       - IE=Edge,chrome=1
       x-runtime:
-      - '0.301000'
+      - '0.373000'
       content-type:
       - application/xml;charset=utf-8
       content-length:
       - '980'
       set-cookie:
-      - tableau_online_id=48cb4e4a2dfd92af27b8856b5bb8cdf0; path=/; expires=Fri, 10-Oct-2014 17:38:18 GMT; HttpOnly
+      - tableau_online_id=d49b3e47f5abd9e6321ab1cb13533c42; path=/; expires=Thu, 16-Oct-2014 21:39:46 GMT; HttpOnly
       p3p:
       - CP="NON"
       connection:
@@ -106,17 +106,17 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<workbook>\n  <name>workbook_chorus_view</name>\n\
-        \  <id>28</id>\n  <size>4112</size>\n  <path>/workbooks</path>\n  <owner>\n\
-        \    <id>5</id>\n  </owner>\n  <tasks>\n  </tasks>\n  <updated-at>2012-10-10T17:38:18.000000Z</updated-at>\n\
-        \  <created-at>2012-10-10T17:38:18.000000Z</created-at>\n  <repository-url>workbook_chorus_view</repository-url>\n\
-        \  <display_tabs>false</display_tabs>\n  <revision>1.9</revision>\n  <views>\n\
-        \    <view>\n      <id>60</id>\n      <name>Sheet 1</name>\n      <title>Sheet\
+        \  <id>42</id>\n  <size>4112</size>\n  <path>/workbooks</path>\n  <owner>\n\
+        \    <id>5</id>\n  </owner>\n  <tasks>\n  </tasks>\n  <updated-at>2012-10-16T21:39:46.000000Z</updated-at>\n\
+        \  <created-at>2012-10-16T21:39:46.000000Z</created-at>\n  <repository-url>workbook_chorus_view</repository-url>\n\
+        \  <display_tabs>false</display_tabs>\n  <revision>2.0</revision>\n  <views>\n\
+        \    <view>\n      <id>71</id>\n      <name>Sheet 1</name>\n      <title>Sheet\
         \ 1</title>\n      <index>0</index>\n      <repository-url>workbook_chorus_view/sheets/Sheet1</repository-url>\n\
         \      <preview-url>http://10.80.129.44/views/workbook_chorus_view/Sheet1?:preview=y</preview-url>\n\
-        \      <updated-at>2012-10-10T17:38:18.000000Z</updated-at>\n      <created-at>2012-10-10T17:38:18.000000Z</created-at>\n\
+        \      <updated-at>2012-10-16T21:39:46.000000Z</updated-at>\n      <created-at>2012-10-16T21:39:46.000000Z</created-at>\n\
         \      <owner>\n        <id>5</id>\n      </owner>\n      <workbook-url>workbook_chorus_view</workbook-url>\n\
         \    </view>\n  </views>\n</workbook>\n"
     http_version: '1.1'
-  recorded_at: Wed, 10 Oct 2012 17:38:17 GMT
+  recorded_at: Tue, 16 Oct 2012 21:39:43 GMT
 recorded_with: VCR 2.1.1
 ...

@@ -124,6 +124,27 @@ describe TableauWorkbook do
     end
   end
 
+  it "has a meaningful error message if tabcmd exits" do
+    VCR.use_cassette('exit_with_status') do
+      t = TableauWorkbook.new({
+          :server => TABLEAU_SERVER_IP,
+          :tableau_username => 'chorusadmin',
+          :tableau_password => 'secret',
+          :db_username => 'gpadmin',
+          :db_password => 'secret',
+          :db_host => 'local_greenplum',
+          :db_port => 5432,
+          :db_database => 'ChorusAnalytics',
+          :db_schema => 'public',
+          :db_relname => 'top_1_000_songs_to_hear_before_you_die',
+          :name => 'new_workbook'
+      })
+      t.save.must_equal false
+      t.errors.empty?.must_equal false
+      t.errors.full_messages[0].must_match("Could not publish Tableau workbook. Ensure that the database local_greenplum:5432 is reachable from the Tableau server.")
+    end
+  end
+
   it "gets the first full size image view for a tableau workbook" do
     VCR.use_cassette('get_full_size_image') do
       t = TableauWorkbook.new({:name => 'BusinessDashboard',

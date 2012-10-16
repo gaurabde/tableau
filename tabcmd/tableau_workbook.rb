@@ -58,6 +58,9 @@ class TableauWorkbook
 
     publish.run(opts, [temp.path])
     true
+  rescue MultiCommand::ExitWithStatus
+    errors.add(:tableau, "Could not publish Tableau workbook. Ensure that the database #{@db_host}:#{@db_port} is reachable from the Tableau server.")
+    false
   rescue Exception => e
     errors.add(:tableau, e.message)
     false
