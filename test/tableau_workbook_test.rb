@@ -11,10 +11,11 @@ VCR.configure do |c|
 end
 
 describe TableauWorkbook do
-  describe 'validations' do
+  describe 'constructing a new tableau workbook' do
     before do
       @valid_params = {
           :server => TABLEAU_SERVER_IP,
+          :port => 1234,
           :tableau_username => 'chorusadmin',
           :tableau_password => 'secret',
           :db_username => 'gpadmin',
@@ -36,7 +37,15 @@ describe TableauWorkbook do
       t = TableauWorkbook.new(@valid_params.merge!(:name => 65.times.collect{'a'}.join("")))
       t.valid?.must_equal false
     end
+
+    it "uses the server hostname and port to construct the server url" do
+      t = TableauWorkbook.new(@valid_params)
+      t.server_url.must_equal "http://#{TABLEAU_SERVER_IP}:1234"
+    end
+
   end
+
+
 
   it "sends an http request to Tableau for a table" do
     VCR.use_cassette('successful_create_table') do
