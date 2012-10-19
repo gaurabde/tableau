@@ -39,8 +39,7 @@ class TableauWorkbook
     publish = MultiCommand::CommandManager.find_command('publish')
 
     opts = OptionParser.new
-    argv = ['-o',
-            '-s' , "http://#{@server}",
+    argv = ['-s' , "http://#{@server}",
             '--username', @tableau_username,
             '--password', @tableau_password,
             '--db-username', @db_username,
@@ -58,12 +57,27 @@ class TableauWorkbook
 
     publish.run(opts, [temp.path])
     true
-  rescue MultiCommand::ExitWithStatus
-    errors.add(:tableau, "Could not publish Tableau workbook. Ensure that the database #{@db_host}:#{@db_port} is reachable from the Tableau server.")
+  rescue MultiCommand::ExitWithStatus => e
+    errors.add(:base, e.status)
     false
   rescue Exception => e
-    errors.add(:tableau, e.message)
+    errors.add(:base, e.message)
     false
+  end
+
+  def destroy
+    delete = MultiCommand::CommandManager.find_command('delete')
+
+    opts = OptionParser.new
+    argv = ['-s' , "http://#{@server}",
+            '--username', @tableau_username,
+            '--password', @tableau_password]
+
+    MultiCommand::CommandManager.define_options(opts, argv)
+    delete.define_options(opts, argv)
+    opts.parse!(argv)
+
+    delete.run(opts, [name])
   end
 
   def image_url

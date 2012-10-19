@@ -88,16 +88,18 @@ module MultiCommand
 
     def run_each(method, args, *addl)
       failures  = 0
+      messages = []
       args.each do |arg|
         begin
           self.send(method, arg, *addl)
         rescue RuntimeError => ex
           logger.error ex.message
           failures += 1
+          messages << ex.message
         end
       end
       if failures > 0
-        raise MultiCommand::ExitWithStatus, failures
+        raise MultiCommand::ExitWithStatus.new(messages.join("\n"))
       end
     end
 

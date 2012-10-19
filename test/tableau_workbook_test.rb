@@ -51,9 +51,10 @@ describe TableauWorkbook do
           :db_database => 'ChorusAnalytics',
           :db_schema => 'public',
           :db_relname => 'top_1_000_songs_to_hear_before_you_die',
-          :name => 'new_workbook'
+          :name => 'another_new_workbook_1'
       })
       t.save.must_equal true
+      t.destroy
     end
   end
 
@@ -70,10 +71,10 @@ describe TableauWorkbook do
                                   :db_database => 'ChorusAnalytics',
                                   :db_schema => 'public',
                                   :query => 'SELECT 4;;',
-                                  :name => 'workbook_chorus_view'
+                                  :name => 'another_new_workbook_2'
                               })
-      res = t.save
-      res.must_equal true
+      t.save.must_equal true
+      t.destroy
     end
   end
 
@@ -95,7 +96,7 @@ describe TableauWorkbook do
                                   :db_database => 'ChorusAnalytics',
                                   :db_schema => 'abc',
                                   :db_relname => 'tablename',
-                                  :name => 'new_workbook'
+                                  :name => 'new_workbook_2'
                               })
       t.save.must_equal false
       t.errors.empty?.must_equal false
@@ -137,15 +138,16 @@ describe TableauWorkbook do
           :db_database => 'ChorusAnalytics',
           :db_schema => 'public',
           :db_relname => 'top_1_000_songs_to_hear_before_you_die',
-          :name => 'new_workbook'
+          :name => 'new_workbook_3'
       })
       t.save.must_equal false
       t.errors.empty?.must_equal false
-      t.errors.full_messages[0].must_match("Could not publish Tableau workbook. Ensure that the database local_greenplum:5432 is reachable from the Tableau server.")
+      t.errors.full_messages[0].must_match("Unable to connect to the server \"local_greenplum\"")
     end
   end
 
   it "gets the first full size image view for a tableau workbook" do
+    skip "feature disabled"
     VCR.use_cassette('get_full_size_image') do
       t = TableauWorkbook.new({:name => 'BusinessDashboard',
                                :server => TABLEAU_SERVER_IP,
