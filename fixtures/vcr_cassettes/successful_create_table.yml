@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Fri, 19 Oct 2012 17:39:32 GMT
+      - Mon, 22 Oct 2012 17:06:13 GMT
       server:
       - Apache-Coyote/1.1
       cache-control:
@@ -33,22 +33,22 @@ http_interactions:
       x-ua-compatible:
       - IE=Edge,chrome=1
       x-runtime:
-      - '0.076000'
+      - '0.123000'
       content-type:
       - application/xml;charset=utf-8
       content-length:
       - '7245'
       set-cookie:
-      - tableau_online_id=caa4a0bd52ece8e0a97adf1cd46520f8; path=/; expires=Sun, 19-Oct-2014 17:39:31 GMT; HttpOnly
-      - workgroup_session_id=70cf4083a6711da83c2db1e26cac6bdf; path=/; HttpOnly
+      - tableau_online_id=3251dcbf6befddfb49e80879e4a9e979; path=/; expires=Wed, 22-Oct-2014 17:06:13 GMT; HttpOnly
+      - workgroup_session_id=bb3f962b9d0568c8c4ea56b9767469c1; path=/; HttpOnly
       p3p:
       - CP="NON"
       connection:
       - close
     body:
       encoding: US-ASCII
-      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<authinfo>\n  <modulus>8f1df2d5e722ba7e77c10d446fbf894cd68c30e061e9ba11561820816551121e6155f4e181399cdd23a34a55d45bfcb2fe70e027ac9a7f0249ddbb8754c8c3b3</modulus>\n\
-        \  <exponent>10001</exponent>\n  <authenticity_token>s+Zmf/ApcoUjUABrWf8D6BCIDD2I0nlc7oG/H7zzI1I=</authenticity_token>\n\
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<authinfo>\n  <modulus>e97f7c17fe2bbf8325ace59a3bab29481159f3b6238faaa1397c993ef36fa4aa7ea2e97aa981e91c627b047363f5a88a266056e463b33ef17739f493b692eced</modulus>\n\
+        \  <exponent>10001</exponent>\n  <authenticity_token>f6jkTixok4P73NGyGsE8Q8GNuXe99n6fyIzqd8J9whY=</authenticity_token>\n\
         \  <version version=\"0.31\">\n    <api_version>0.31</api_version>\n    <server_api_version>0.31</server_api_version>\n\
         \    <document_version>8.1</document_version>\n    <product_version>Kraken</product_version>\n\
         \    <external_version>Kraken</external_version>\n    <build>Kraken.12.0916.2030</build>\n\
@@ -130,7 +130,7 @@ http_interactions:
         \  <ssl>false</ssl>\n  <ssl_port>443</ssl_port>\n  <multi_site_enabled>false</multi_site_enabled>\n\
         </authinfo>\n"
     http_version: '1.1'
-  recorded_at: Fri, 19 Oct 2012 17:39:25 GMT
+  recorded_at: Mon, 22 Oct 2012 17:06:07 GMT
 - request:
     method: post
     uri: http://10.80.129.44/manual/auth/login
@@ -143,9 +143,9 @@ http_interactions:
       user-agent:
       - Tabcmd
       cookie:
-      - workgroup_session_id=70cf4083a6711da83c2db1e26cac6bdf
+      - workgroup_session_id=bb3f962b9d0568c8c4ea56b9767469c1
       content-type:
-      - multipart/form-data; boundary=168925458217159500719828263854830348
+      - multipart/form-data; boundary=646978322765090393561433655714349025
       content-length:
       - '703'
       connection:
@@ -156,7 +156,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Fri, 19 Oct 2012 17:39:32 GMT
+      - Mon, 22 Oct 2012 17:06:14 GMT
       server:
       - Apache-Coyote/1.1
       cache-control:
@@ -170,15 +170,15 @@ http_interactions:
       x-ua-compatible:
       - IE=Edge,chrome=1
       x-runtime:
-      - '0.103000'
+      - '0.470000'
       content-type:
       - application/xml;charset=utf-8
       content-length:
-      - '1827'
+      - '1826'
       set-cookie:
-      - tableau_online_id=d0aa999da5f219826229299f34dd7ec5; path=/; expires=Sun, 19-Oct-2014 17:39:32 GMT; HttpOnly
+      - tableau_online_id=ec34258f3bb73dfa57e1faabb310dd15; path=/; expires=Wed, 22-Oct-2014 17:06:14 GMT; HttpOnly
       - username=; path=/
-      - workgroup_session_id=b984bb0c5dd98d5435d434b1654757ad; path=/; HttpOnly
+      - workgroup_session_id=0c4a091fff8840ad383bb7638927861e; path=/; HttpOnly
       p3p:
       - CP="NON"
       connection:
@@ -188,26 +188,26 @@ http_interactions:
       string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<successful_login>\n\
         \  <user>\n    <id>5</id>\n    <site_prefix></site_prefix>\n    <site_namespace></site_namespace>\n\
         \    <site_displayname>Default</site_displayname>\n    <name>local\\chorusadmin</name>\n\
-        \    <friendly_name>chorusadmin</friendly_name>\n    <login_at>2012-10-19\
-        \ 17:39:32 UTC</login_at>\n    <email></email>\n    <licensing_level>Interactor</licensing_level>\n\
+        \    <friendly_name>chorusadmin</friendly_name>\n    <login_at>2012-10-22\
+        \ 17:06:14 UTC</login_at>\n    <email></email>\n    <licensing_level>Interactor</licensing_level>\n\
         \    <administrator>true</administrator>\n    <admin_type>system</admin_type>\n\
         \    <publisher>true</publisher>\n    <raw_data_suppressor>true</raw_data_suppressor>\n\
         \    <quotas>\n      <row_limit></row_limit>\n      <storage_limit>52428800</storage_limit>\n\
-        \      <storage_used>78130</storage_used>\n      <storage_available>52350670</storage_available>\n\
+        \      <storage_used>94804</storage_used>\n      <storage_available>52333996</storage_available>\n\
         \      <extracts_required>0</extracts_required>\n    </quotas>\n  </user>\n\
         \  <settings>\n    <allow_content_admins>true</allow_content_admins>\n   \
         \ <allow_scheduling>true</allow_scheduling>\n    <embedded_credentials>true</embedded_credentials>\n\
         \    <enable_guest>true</enable_guest>\n    <extract_engine_enabled>true</extract_engine_enabled>\n\
         \    <language_id>en</language_id>\n    <locale_id>en_US</locale_id>\n   \
         \ <managed_keychains>true</managed_keychains>\n    <motd></motd>\n    <public_users_list>false</public_users_list>\n\
-        \    <remember_passwords_forever>false</remember_passwords_forever>\n    <start_page>views</start_page>\n\
+        \    <remember_passwords_forever>true</remember_passwords_forever>\n    <start_page>views</start_page>\n\
         \    <webops_allow_new_account_signup>true</webops_allow_new_account_signup>\n\
         \    <webops_allow_publishing>true</webops_allow_publishing>\n    <webops_backup_mode>false</webops_backup_mode>\n\
         \    <webops_maintenance_mode>false</webops_maintenance_mode>\n    <view_display_setting>name</view_display_setting>\n\
-        \    <sspi_setting>false</sspi_setting>\n  </settings>\n  <authenticity_token>lh5WjY7c1tQVnoYrbPss8dWWMKSpbvDOaZnZAFW/VFA=</authenticity_token>\n\
+        \    <sspi_setting>false</sspi_setting>\n  </settings>\n  <authenticity_token>Mcvfs56nh+hvmSrfjzWfN3ITNcGp5tYfp8p0ONi9xCE=</authenticity_token>\n\
         </successful_login>\n"
     http_version: '1.1'
-  recorded_at: Fri, 19 Oct 2012 17:39:26 GMT
+  recorded_at: Mon, 22 Oct 2012 17:06:08 GMT
 - request:
     method: get
     uri: http://10.80.129.44/manual/pubkey/workbooks.xml
@@ -220,7 +220,7 @@ http_interactions:
       user-agent:
       - Tabcmd
       cookie:
-      - workgroup_session_id=b984bb0c5dd98d5435d434b1654757ad
+      - workgroup_session_id=0c4a091fff8840ad383bb7638927861e
       connection:
       - close
   response:
@@ -229,7 +229,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Fri, 19 Oct 2012 17:39:32 GMT
+      - Mon, 22 Oct 2012 17:06:15 GMT
       server:
       - Apache-Coyote/1.1
       cache-control:
@@ -243,13 +243,13 @@ http_interactions:
       x-ua-compatible:
       - IE=Edge,chrome=1
       x-runtime:
-      - '0.157000'
+      - '0.112000'
       content-type:
       - application/xml;charset=utf-8
       content-length:
       - '272'
       set-cookie:
-      - tableau_online_id=9a7437ffaca2637948ba5473a4cc2fca; path=/; expires=Sun, 19-Oct-2014 17:39:32 GMT; HttpOnly
+      - tableau_online_id=1cbb5cb439c71dd234efa8af1e984181; path=/; expires=Wed, 22-Oct-2014 17:06:15 GMT; HttpOnly
       p3p:
       - CP="NON"
       connection:
@@ -257,10 +257,10 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<keyinfo>\n  <keyname>publish_key</keyname>\n\
-        \  <modulus>990f1a0b541d11f64a48c586ea5ebef6989cc1b1d84ed8f2639f37a0f007edac6a8f786b0463195fefeba032ee7dbf3bea0fcb563739ba0dac72322a2fa27afd</modulus>\n\
+        \  <modulus>a8e921856e8d820b19282787e738e94b142924aa4fb58694648f78ba332e14a45db1da8737feefe4e85ec295399a6466ae6e2bd7aa7bf8ac65b09a62aa64abd7</modulus>\n\
         \  <exponent>10001</exponent>\n</keyinfo>\n"
     http_version: '1.1'
-  recorded_at: Fri, 19 Oct 2012 17:39:26 GMT
+  recorded_at: Mon, 22 Oct 2012 17:06:09 GMT
 - request:
     method: post
     uri: http://10.80.129.44/manual/create/workbooks.xml
@@ -273,11 +273,11 @@ http_interactions:
       user-agent:
       - Tabcmd
       cookie:
-      - workgroup_session_id=b984bb0c5dd98d5435d434b1654757ad
+      - workgroup_session_id=0c4a091fff8840ad383bb7638927861e
       content-type:
-      - multipart/form-data; boundary=727341632885851999697092939732714911
+      - multipart/form-data; boundary=763336540455520697849705437807556021
       content-length:
-      - '5731'
+      - '5730'
       connection:
       - close
   response:
@@ -286,7 +286,7 @@ http_interactions:
       message: Created
     headers:
       date:
-      - Fri, 19 Oct 2012 17:39:33 GMT
+      - Mon, 22 Oct 2012 17:06:20 GMT
       server:
       - Apache-Coyote/1.1
       cache-control:
@@ -300,13 +300,13 @@ http_interactions:
       x-ua-compatible:
       - IE=Edge,chrome=1
       x-runtime:
-      - '0.502000'
+      - '5.141000'
       content-type:
       - application/xml;charset=utf-8
       content-length:
       - '990'
       set-cookie:
-      - tableau_online_id=ef01f5ae15614b6befd8d2d5ab9aa3f8; path=/; expires=Sun, 19-Oct-2014 17:39:33 GMT; HttpOnly
+      - tableau_online_id=9cd4025a5ad00ec8cf43c619750d2bd2; path=/; expires=Wed, 22-Oct-2014 17:06:15 GMT; HttpOnly
       p3p:
       - CP="NON"
       connection:
@@ -314,18 +314,18 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<workbook>\n  <name>another_new_workbook_1</name>\n\
-        \  <id>73</id>\n  <size>4186</size>\n  <path>/workbooks</path>\n  <owner>\n\
-        \    <id>5</id>\n  </owner>\n  <tasks>\n  </tasks>\n  <updated-at>2012-10-19T17:39:33.000000Z</updated-at>\n\
-        \  <created-at>2012-10-19T17:39:33.000000Z</created-at>\n  <repository-url>another_new_workbook_1</repository-url>\n\
+        \  <id>82</id>\n  <size>4185</size>\n  <path>/workbooks</path>\n  <owner>\n\
+        \    <id>5</id>\n  </owner>\n  <tasks>\n  </tasks>\n  <updated-at>2012-10-22T17:06:20.000000Z</updated-at>\n\
+        \  <created-at>2012-10-22T17:06:16.000000Z</created-at>\n  <repository-url>another_new_workbook_1</repository-url>\n\
         \  <display_tabs>false</display_tabs>\n  <revision>1.0</revision>\n  <views>\n\
-        \    <view>\n      <id>90</id>\n      <name>Sheet 1</name>\n      <title>Sheet\
+        \    <view>\n      <id>98</id>\n      <name>Sheet 1</name>\n      <title>Sheet\
         \ 1</title>\n      <index>0</index>\n      <repository-url>another_new_workbook_1/sheets/Sheet1</repository-url>\n\
         \      <preview-url>http://10.80.129.44/views/another_new_workbook_1/Sheet1?:preview=y</preview-url>\n\
-        \      <updated-at>2012-10-19T17:39:33.000000Z</updated-at>\n      <created-at>2012-10-19T17:39:33.000000Z</created-at>\n\
+        \      <updated-at>2012-10-22T17:06:20.000000Z</updated-at>\n      <created-at>2012-10-22T17:06:20.000000Z</created-at>\n\
         \      <owner>\n        <id>5</id>\n      </owner>\n      <workbook-url>another_new_workbook_1</workbook-url>\n\
         \    </view>\n  </views>\n</workbook>\n"
     http_version: '1.1'
-  recorded_at: Fri, 19 Oct 2012 17:39:27 GMT
+  recorded_at: Mon, 22 Oct 2012 17:06:14 GMT
 - request:
     method: post
     uri: http://10.80.129.44/manual/delete_by_name/workbooks
@@ -338,9 +338,9 @@ http_interactions:
       user-agent:
       - Tabcmd
       cookie:
-      - workgroup_session_id=b984bb0c5dd98d5435d434b1654757ad
+      - workgroup_session_id=0c4a091fff8840ad383bb7638927861e
       content-type:
-      - multipart/form-data; boundary=45595012870192582565681589546988001
+      - multipart/form-data; boundary=98049747361911704440380174950237390
       content-length:
       - '488'
       connection:
@@ -351,7 +351,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Fri, 19 Oct 2012 17:39:34 GMT
+      - Mon, 22 Oct 2012 17:06:21 GMT
       server:
       - Apache-Coyote/1.1
       cache-control:
@@ -367,13 +367,13 @@ http_interactions:
       x-ua-compatible:
       - IE=Edge,chrome=1
       x-runtime:
-      - '0.096000'
+      - '0.671000'
       content-type:
       - application/xml;charset=utf-8
       content-length:
       - '50'
       set-cookie:
-      - tableau_online_id=4de8d23dc0e9ca80f2da4846a5fb434e; path=/; expires=Sun, 19-Oct-2014 17:39:34 GMT; HttpOnly
+      - tableau_online_id=df0928711e332f1f0aa4f9bdd150ae26; path=/; expires=Wed, 22-Oct-2014 17:06:21 GMT; HttpOnly
       p3p:
       - CP="NON"
       connection:
@@ -386,6 +386,6 @@ http_interactions:
 
         '
     http_version: '1.1'
-  recorded_at: Fri, 19 Oct 2012 17:39:28 GMT
+  recorded_at: Mon, 22 Oct 2012 17:06:15 GMT
 recorded_with: VCR 2.1.1
 ...

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://10.80.129.44/manual/pubkey/workbooks.xml
+    uri: http://10.80.129.44/manual/auth?format=xml
     body:
       encoding: ASCII-8BIT
       string: ''
@@ -11,8 +11,6 @@ http_interactions:
       - ! '*/*'
       user-agent:
       - Tabcmd
-      cookie:
-      - workgroup_session_id=82a41ed9cd791566082de59c5f27cd5f
       connection:
       - close
   response:
@@ -21,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Fri, 19 Oct 2012 17:39:35 GMT
+      - Mon, 22 Oct 2012 17:06:25 GMT
       server:
       - Apache-Coyote/1.1
       cache-control:
@@ -35,13 +33,223 @@ http_interactions:
       x-ua-compatible:
       - IE=Edge,chrome=1
       x-runtime:
-      - '0.051000'
+      - '0.088000'
+      content-type:
+      - application/xml;charset=utf-8
+      content-length:
+      - '7245'
+      set-cookie:
+      - tableau_online_id=d8971852b96030f1b699922c5b0a6aa4; path=/; expires=Wed, 22-Oct-2014 17:06:25 GMT; HttpOnly
+      - workgroup_session_id=9a7ce68146cec15c060919ea161ef5d8; path=/; HttpOnly
+      p3p:
+      - CP="NON"
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<authinfo>\n  <modulus>a59a47df7caa3a81acc20b8832e232bdebf81451da37550dbd79cb9f9832f3c39108f2e144e75edc5770d2bef45b1dbcc81c385456c3f8ce7490694e7bc06763</modulus>\n\
+        \  <exponent>10001</exponent>\n  <authenticity_token>wAkQ5QOZicxBob9bDWMXd31sYG/5EG6GXC1H+AUKZFk=</authenticity_token>\n\
+        \  <version version=\"0.31\">\n    <api_version>0.31</api_version>\n    <server_api_version>0.31</server_api_version>\n\
+        \    <document_version>8.1</document_version>\n    <product_version>Kraken</product_version>\n\
+        \    <external_version>Kraken</external_version>\n    <build>Kraken.12.0916.2030</build>\n\
+        \    <publishing_method>unrestricted</publishing_method>\n  </version>\n \
+        \ <api>\n    <CreateDSPublishUrl>\n      <ssl>no</ssl>\n      <url>/manual/create/datasources?format=xml&amp;all=true</url>\n\
+        \    </CreateDSPublishUrl>\n    <CreateProjectsUrl>\n      <ssl>no</ssl>\n\
+        \      <url>/manual/create/projects</url>\n    </CreateProjectsUrl>\n    <CreateViewsUrl>\n\
+        \      <ssl>no</ssl>\n      <url>/manual/create/views</url>\n    </CreateViewsUrl>\n\
+        \    <CreateWorkbooksUrl>\n      <ssl>no</ssl>\n      <url>/manual/create/workbooks</url>\n\
+        \    </CreateWorkbooksUrl>\n    <DSExistsUrl>\n      <ssl>no</ssl>\n     \
+        \ <url>/manual/byname/datasources</url>\n    </DSExistsUrl>\n    <DSPermissionsUrlT>\n\
+        \      <ssl>no</ssl>\n      <url>/manual/datasource28/permissions/%s.xml</url>\n\
+        \    </DSPermissionsUrlT>\n    <DSUrl>\n      <ssl>no</ssl>\n      <url>/manual/datasources</url>\n\
+        \    </DSUrl>\n    <GetWBPublishKeyUrl>\n      <ssl>no</ssl>\n      <url>/manual/pubkey/workbooks.xml</url>\n\
+        \    </GetWBPublishKeyUrl>\n    <LexiconUrl>\n      <ssl>no</ssl>\n      <url>/manual/lexicon28/permissions?format=xml</url>\n\
+        \    </LexiconUrl>\n    <ListProjectsUrlT>\n      <ssl>no</ssl>\n      <url>/manual/projects?format=xml&amp;all=true&amp;intent=%s</url>\n\
+        \    </ListProjectsUrlT>\n    <ListUsersUrl>\n      <ssl>no</ssl>\n      <url>/manual/by_publisher/workbooks.xml</url>\n\
+        \    </ListUsersUrl>\n    <ListViewsUrl>\n      <ssl>no</ssl>\n      <url>/manual/views?format=xml&amp;all=true</url>\n\
+        \    </ListViewsUrl>\n    <LoginUrl>\n      <ssl>no</ssl>\n      <url>/manual/auth/login</url>\n\
+        \    </LoginUrl>\n    <LogoutUrl>\n      <ssl>no</ssl>\n      <url>/manual/auth/logout</url>\n\
+        \    </LogoutUrl>\n    <MemberOfUrl>\n      <ssl>no</ssl>\n      <url>/manual/member_of/users</url>\n\
+        \    </MemberOfUrl>\n    <MetadataUrl>\n      <ssl>no</ssl>\n      <url>/manual/metadata</url>\n\
+        \    </MetadataUrl>\n    <MyFileQuota>\n      <ssl>no</ssl>\n      <url>/manual/my_file_quota?format=xml</url>\n\
+        \    </MyFileQuota>\n    <ProjectsUrl>\n      <ssl>no</ssl>\n      <url>/manual/projects</url>\n\
+        \    </ProjectsUrl>\n    <ProjectExistsUrl>\n      <ssl>no</ssl>\n      <url>/manual/byname/projects</url>\n\
+        \    </ProjectExistsUrl>\n    <ProjectPermissionsUrlT>\n      <ssl>no</ssl>\n\
+        \      <url>/manual/project_defaults28/permissions/%s.xml</url>\n    </ProjectPermissionsUrlT>\n\
+        \    <ResetPassword>\n      <ssl>no</ssl>\n      <url>/auth/send_reset_link</url>\n\
+        \    </ResetPassword>\n    <SchedulesUrl>\n      <ssl>no</ssl>\n      <url>/schedules.xml</url>\n\
+        \    </SchedulesUrl>\n    <SearchUrlT>\n      <ssl>no</ssl>\n      <url>/manual/searches?format=xml&amp;all=true&amp;query=%s&amp;intent=%s</url>\n\
+        \    </SearchUrlT>\n    <SystemStatusUrl>\n      <ssl>no</ssl>\n      <url>/manual/auth/system_status</url>\n\
+        \    </SystemStatusUrl>\n    <TagUrl>\n      <ssl>no</ssl>\n      <url>/manual/tags</url>\n\
+        \    </TagUrl>\n    <TagsUrl>\n      <ssl>no</ssl>\n      <url>/manual/recents/tags.xml</url>\n\
+        \    </TagsUrl>\n    <ThumbnailLocalUrlT>\n      <ssl>no</ssl>\n      <url>/manual/views/%s/thumbnail</url>\n\
+        \    </ThumbnailLocalUrlT>\n    <ThumbnailUrlT>\n      <ssl>no</ssl>\n   \
+        \   <url>http://%s:%d/manual/thumb/views/%s</url>\n    </ThumbnailUrlT>\n\
+        \    <ThumbnailLocalUnkUrlT>\n      <ssl>no</ssl>\n      <url>/thumb/%s/%s</url>\n\
+        \    </ThumbnailLocalUnkUrlT>\n    <ThumbnailUnkUrlT>\n      <ssl>no</ssl>\n\
+        \      <url>http://%s:%d/manual/thumb/%s/%s</url>\n    </ThumbnailUnkUrlT>\n\
+        \    <UsersUrl>\n      <ssl>no</ssl>\n      <url>/manual/users</url>\n   \
+        \ </UsersUrl>\n    <ViewExistsUrl>\n      <ssl>no</ssl>\n      <url>/manual/byname/views</url>\n\
+        \    </ViewExistsUrl>\n    <ViewsUrl>\n      <ssl>no</ssl>\n      <url>/manual/views</url>\n\
+        \    </ViewsUrl>\n    <WBPermissionsUrlT>\n      <ssl>no</ssl>\n      <url>/manual/workbook28/permissions/%s.xml</url>\n\
+        \    </WBPermissionsUrlT>\n    <WorkbooksUrl>\n      <ssl>no</ssl>\n     \
+        \ <url>/manual/workbooks</url>\n    </WorkbooksUrl>\n    <WorkbooksExternalUseUrl>\n\
+        \      <ssl>no</ssl>\n      <url>/workbooks</url>\n    </WorkbooksExternalUseUrl>\n\
+        \    <WorkbookExistsUrl>\n      <ssl>no</ssl>\n      <url>/manual/byname/workbooks</url>\n\
+        \    </WorkbookExistsUrl>\n    <WorkbookValidateUrl>\n      <ssl>no</ssl>\n\
+        \      <url>/manual/validate/workbooks</url>\n    </WorkbookValidateUrl>\n\
+        \    <WhoAmIUrl>\n      <ssl>no</ssl>\n      <url>/manual/auth/whoami</url>\n\
+        \    </WhoAmIUrl>\n    <LookupIdentitiesUrl>\n      <ssl>no</ssl>\n      <url>/manual/lookupgroupsandusers.xml</url>\n\
+        \    </LookupIdentitiesUrl>\n    <SearchIdentitiesUrlT>\n      <ssl>no</ssl>\n\
+        \      <url>/manual/groupsandusers.xml?s=%s</url>\n    </SearchIdentitiesUrlT>\n\
+        \    <GetDeletedWorkbookUrl>\n      <ssl>no</ssl>\n      <url>/deleted/workbooks?format=xml</url>\n\
+        \    </GetDeletedWorkbookUrl>\n    <GetUserFavMruListUrl>\n      <ssl>no</ssl>\n\
+        \      <url>/cur_user/favorites?format=xml</url>\n    </GetUserFavMruListUrl>\n\
+        \    <UpdateFavoriteUrl>\n      <ssl>no</ssl>\n      <url>/manual/update_favs/favorites</url>\n\
+        \    </UpdateFavoriteUrl>\n    <GetWorkbookThumbnailUrl>\n      <ssl>no</ssl>\n\
+        \      <url>/thumb/workbooks/%s</url>\n    </GetWorkbookThumbnailUrl>\n  \
+        \  <DataserverUrl>\n      <ssl>no</ssl>\n      <url>dataserver</url>\n   \
+        \ </DataserverUrl>\n    <GetPublicKeyUrl>\n      <ssl>no</ssl>\n      <url>/manual/auth/pubkey.xml</url>\n\
+        \    </GetPublicKeyUrl>\n    <PublishedDSUrl>\n      <ssl>no</ssl>\n     \
+        \ <url>/manual/published/datasources.xml</url>\n    </PublishedDSUrl>\n  \
+        \  <FileUploadCreateUrl>\n      <ssl>no</ssl>\n      <url>/manual/file_uploads/create.xml</url>\n\
+        \    </FileUploadCreateUrl>\n    <FileUploadAppendUrl>\n      <ssl>no</ssl>\n\
+        \      <url>/manual/file_uploads/%s/write.xml</url>\n    </FileUploadAppendUrl>\n\
+        \    <FileUploadStatusUrl>\n      <ssl>no</ssl>\n      <url>/manual/file_uploads/%s/status.xml</url>\n\
+        \    </FileUploadStatusUrl>\n    <FileUploadDeleteUrl>\n      <ssl>no</ssl>\n\
+        \      <url>/manual/file_uploads/%s/delete.xml</url>\n    </FileUploadDeleteUrl>\n\
+        \    <UpdateDSPublishUrl>\n      <ssl>no</ssl>\n      <url>/manual/update/datasources?format=xml&amp;all=true</url>\n\
+        \    </UpdateDSPublishUrl>\n    <DSNoExtractUrlT>\n      <ssl>no</ssl>\n \
+        \     <url>/manual/datasources/%s.tds?no_extract=true</url>\n    </DSNoExtractUrlT>\n\
+        \    <ManagedMetadataUrl>\n      <ssl>no</ssl>\n      <url>/manual/auth/keychains.xml</url>\n\
+        \    </ManagedMetadataUrl>\n  </api>\n  <default_quotas>\n    <row_limit></row_limit>\n\
+        \    <storage_limit>50</storage_limit>\n  </default_quotas>\n  <system_status>\n\
+        \    <maintenance>false</maintenance>\n    <publishing_allowed>true</publishing_allowed>\n\
+        \    <accounts_enabled>true</accounts_enabled>\n    <default_row_limit></default_row_limit>\n\
+        \    <default_quota>50</default_quota>\n  </system_status>\n  <http_port>80</http_port>\n\
+        \  <ssl>false</ssl>\n  <ssl_port>443</ssl_port>\n  <multi_site_enabled>false</multi_site_enabled>\n\
+        </authinfo>\n"
+    http_version: '1.1'
+  recorded_at: Mon, 22 Oct 2012 17:06:20 GMT
+- request:
+    method: post
+    uri: http://10.80.129.44/manual/auth/login
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Tabcmd
+      cookie:
+      - workgroup_session_id=9a7ce68146cec15c060919ea161ef5d8
+      content-type:
+      - multipart/form-data; boundary=408335778193177262474885608674322760
+      content-length:
+      - '703'
+      connection:
+      - close
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 22 Oct 2012 17:06:25 GMT
+      server:
+      - Apache-Coyote/1.1
+      cache-control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      pragma:
+      - no-cache
+      expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      vary:
+      - ! '*,Accept-Encoding'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.111000'
+      content-type:
+      - application/xml;charset=utf-8
+      content-length:
+      - '1826'
+      set-cookie:
+      - tableau_online_id=d040cc66ad50521acddbafe6ef3edc55; path=/; expires=Wed, 22-Oct-2014 17:06:26 GMT; HttpOnly
+      - username=; path=/
+      - workgroup_session_id=2edc94dbb39bd74ddcb981a90be7c6a5; path=/; HttpOnly
+      p3p:
+      - CP="NON"
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<successful_login>\n\
+        \  <user>\n    <id>5</id>\n    <site_prefix></site_prefix>\n    <site_namespace></site_namespace>\n\
+        \    <site_displayname>Default</site_displayname>\n    <name>local\\chorusadmin</name>\n\
+        \    <friendly_name>chorusadmin</friendly_name>\n    <login_at>2012-10-22\
+        \ 17:06:26 UTC</login_at>\n    <email></email>\n    <licensing_level>Interactor</licensing_level>\n\
+        \    <administrator>true</administrator>\n    <admin_type>system</admin_type>\n\
+        \    <publisher>true</publisher>\n    <raw_data_suppressor>true</raw_data_suppressor>\n\
+        \    <quotas>\n      <row_limit></row_limit>\n      <storage_limit>52428800</storage_limit>\n\
+        \      <storage_used>94804</storage_used>\n      <storage_available>52333996</storage_available>\n\
+        \      <extracts_required>0</extracts_required>\n    </quotas>\n  </user>\n\
+        \  <settings>\n    <allow_content_admins>true</allow_content_admins>\n   \
+        \ <allow_scheduling>true</allow_scheduling>\n    <embedded_credentials>true</embedded_credentials>\n\
+        \    <enable_guest>true</enable_guest>\n    <extract_engine_enabled>true</extract_engine_enabled>\n\
+        \    <language_id>en</language_id>\n    <locale_id>en_US</locale_id>\n   \
+        \ <managed_keychains>true</managed_keychains>\n    <motd></motd>\n    <public_users_list>false</public_users_list>\n\
+        \    <remember_passwords_forever>true</remember_passwords_forever>\n    <start_page>views</start_page>\n\
+        \    <webops_allow_new_account_signup>true</webops_allow_new_account_signup>\n\
+        \    <webops_allow_publishing>true</webops_allow_publishing>\n    <webops_backup_mode>false</webops_backup_mode>\n\
+        \    <webops_maintenance_mode>false</webops_maintenance_mode>\n    <view_display_setting>name</view_display_setting>\n\
+        \    <sspi_setting>false</sspi_setting>\n  </settings>\n  <authenticity_token>a2r/KdLmuOckThSbPu5ErEpkpgZiouIAR52tHjQVXV8=</authenticity_token>\n\
+        </successful_login>\n"
+    http_version: '1.1'
+  recorded_at: Mon, 22 Oct 2012 17:06:20 GMT
+- request:
+    method: get
+    uri: http://10.80.129.44/manual/pubkey/workbooks.xml
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Tabcmd
+      cookie:
+      - workgroup_session_id=2edc94dbb39bd74ddcb981a90be7c6a5
+      connection:
+      - close
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 22 Oct 2012 17:06:26 GMT
+      server:
+      - Apache-Coyote/1.1
+      cache-control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      pragma:
+      - no-cache
+      expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      vary:
+      - ! '*,Accept-Encoding'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.055000'
       content-type:
       - application/xml;charset=utf-8
       content-length:
       - '272'
       set-cookie:
-      - tableau_online_id=9ee66d5a53975f3d6f674ede903eeeb7; path=/; expires=Sun, 19-Oct-2014 17:39:36 GMT; HttpOnly
+      - tableau_online_id=9e4044a9facfdb86e3d904a468681aa6; path=/; expires=Wed, 22-Oct-2014 17:06:26 GMT; HttpOnly
       p3p:
       - CP="NON"
       connection:
@@ -49,10 +257,10 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<keyinfo>\n  <keyname>publish_key</keyname>\n\
-        \  <modulus>939bf906d028d9e4217801acd084dd5f54b72bca8c53df1acb61c9135c2d2db2e71d422af977350fd00fe08bbc3f97448ac38e448d740cdde419cf06ab306581</modulus>\n\
+        \  <modulus>974b868d61a8e2da59efa697b8b5272a10cc4f31a17f029f82913b51b7d761d31761171898cf7106ebe2692b4b7e7cc5b7765e40280cdbd62092cced1c2170c5</modulus>\n\
         \  <exponent>10001</exponent>\n</keyinfo>\n"
     http_version: '1.1'
-  recorded_at: Fri, 19 Oct 2012 17:39:30 GMT
+  recorded_at: Mon, 22 Oct 2012 17:06:20 GMT
 - request:
     method: post
     uri: http://10.80.129.44/manual/create/workbooks.xml
@@ -65,11 +273,11 @@ http_interactions:
       user-agent:
       - Tabcmd
       cookie:
-      - workgroup_session_id=82a41ed9cd791566082de59c5f27cd5f
+      - workgroup_session_id=2edc94dbb39bd74ddcb981a90be7c6a5
       content-type:
-      - multipart/form-data; boundary=432861937663098357638867614797968
+      - multipart/form-data; boundary=899019311600689313485630818397907660
       content-length:
-      - '5695'
+      - '5724'
       connection:
       - close
   response:
@@ -78,15 +286,15 @@ http_interactions:
       message: Internal Server Error
     headers:
       date:
-      - Fri, 19 Oct 2012 17:39:38 GMT
+      - Mon, 22 Oct 2012 17:06:30 GMT
       server:
       - Apache-Coyote/1.1
       x-runtime:
-      - '2.547000'
+      - '3.358000'
       content-type:
       - text/xml
       content-length:
-      - '585'
+      - '612'
       vary:
       - Accept-Encoding
       p3p:
@@ -97,13 +305,13 @@ http_interactions:
       encoding: US-ASCII
       string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<error>\n  <message>Tableau\
         \ Server encountered an internal error.</message>\n  <details>com.tableausoftware.nativeapi.dll.TableauException:\
-        \ Could not connect to the server;\nCould not resolve hostname.\nUnable to\
-        \ connect to the server \"local_greenplum\". Check that the server is running\
-        \ and that you have access privileges to the requested database.\nErrors occurred\
-        \ while trying to load the workbook \"new_workbook_3\". The load was not able\
-        \ to complete successfully.\n</details>\n  <requestid>Request ID: UIGQWApQgawAAA1oqFMAAADH</requestid>\n\
-        </error>\n\n\n"
+        \ Database error 0x80004005: Could not connect to the server;\nCould not resolve\
+        \ hostname.\nUnable to connect to the server \"local_greenplum\". Check that\
+        \ the server is running and that you have access privileges to the requested\
+        \ database.\nErrors occurred while trying to load the workbook \"new_workbook_3\"\
+        . The load was not able to complete successfully.\n</details>\n  <requestid>Request\
+        \ ID: UIV9EgpQgawAAA1oq3IAAAC@</requestid>\n</error>\n\n\n"
     http_version: '1.1'
-  recorded_at: Fri, 19 Oct 2012 17:39:32 GMT
+  recorded_at: Mon, 22 Oct 2012 17:06:24 GMT
 recorded_with: VCR 2.1.1
 ...
