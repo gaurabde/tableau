@@ -4,7 +4,6 @@ group :default do
   gem 'highline', "~>1.6.1"
   gem 'hpricot', "~>0.8.6"
   gem 'jruby-openssl', "~>0.7.7"
-  gem 'log4r'
   gem 'rails', '~>3.2.5'
   gem 'rchardet19'
   gem 'rubyzip', "~>0.9.4"

@@ -16,11 +16,12 @@ $LOAD_PATH << TABCMD_LIB
 $LOAD_PATH.uniq!
 
 require 'product_version'
-require 'logging'
+#require 'logging'
 require 'hierstruct'
 require 'uri'
 require 'pathname'
 require 'relative_path'
+require 'rexml/document'
 
 Dir[File.expand_path(__FILE__+'/../*.rb')].sort.each do |f|
   require f[TABCMD_LIB.length+1..-4] unless f =~ /tabcmd\.rb$/

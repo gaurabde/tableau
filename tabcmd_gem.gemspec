@@ -18,7 +18,6 @@ Gem::Specification.new do |s|
   # s.test_files = s.files.select {|path| path =~ /^test\/.*_test.rb/}
 
   s.require_paths = %w[tabcmd]
-  s.add_dependency "log4r"
   s.add_dependency "rchardet19"
   s.add_dependency "hpricot"
   s.add_dependency "highline"

@@ -104,7 +104,7 @@ module ActionDispatch
 
     # Renders an exception in one of many formats
     def render_multiformat_exception(request, exception)
-      Log4r.log_exception(exception, logger, :info)
+      #Log4r.log_exception(exception, logger, :info)
 
       status = 500
       if ConfigurationSupport.is_beaker?
