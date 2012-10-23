@@ -8,7 +8,7 @@
   </preferences>
   <datasources>
     <datasource caption='Chorus Dataset' inline='true' name='greenplum.41180.617203761576' version='8.1'>
-      <connection class='postgres' dbname='<%= @db_database %>' port='<%= @db_port %>' server='<%= @db_host %>' username='<%= @db_username %>'>
+      <connection class='greenplum' dbname='<%= @db_database %>' port='<%= @db_port %>' server='<%= @db_host %>' username='<%= @db_username %>'>
         <% if is_chorus_view? %>
             <relation name='TableauSQL' type='text'><%= @query %></relation>
         <% else %>
