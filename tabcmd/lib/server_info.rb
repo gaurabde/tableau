@@ -462,7 +462,7 @@ class ServerInfo
   end
 
   def login
-    is_current = (@session_id && is_current_version? && !@authenticity_token.empty?)
+    is_current = (@session_id && !@authenticity_token.empty?)
     if is_current
       logger.info "Continuing previous session"
     else
@@ -489,7 +489,6 @@ class ServerInfo
     # earlier session info.  Write a token with the current (nil) session_id
     write_token
     key = request_public_key('manual/auth?format=xml', 'authinfo')
-    require_current_version!
     @session_id = send_password(key)
     write_token
   end
@@ -644,25 +643,6 @@ class ServerInfo
       raise RuntimeError, "Unexpected response from server during authentication."
     end
     return key
-  end
-
-  def is_current_version?
-    XML_API_VERSION == @version[:api_version]
-  end
-
-  def require_current_version!
-    unless is_current_version?
-      if @version[:product_version]
-        msg = "#{MultiCommand.appname} version #{ProductVersion.current} does not match Tableau Server version #{@version[:product_version]}."
-      else
-        msg = "#{MultiCommand.appname} version #{ProductVersion.current} is newer than your Tableau Server version."
-      end
-      msg += " You must use compatible versions of #{MultiCommand.appname} and Tableau Server."
-      logger.debug "Tabcmd api version: '#{XML_API_VERSION}', product version '#{ProductVersion.current}', build '#{ProductVersion.rstr}'."
-      logger.debug "Server api version: '#{@version[:api_version]}', product version '#{@version[:product_version]}', build #{@version[:build]}'."
-      raise RuntimeError, msg
-    end
-    true
   end
 
   def retry_after_login(request, opts)
