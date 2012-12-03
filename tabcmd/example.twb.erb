@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8' ?>
 
-<workbook version='8.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+<workbook version='8.0' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <!-- generated from Chorus template for Tableau 8                -->
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
   </preferences>
   <datasources>
-    <datasource caption='Chorus Dataset' inline='true' name='greenplum.41180.617203761576' version='8.1'>
+    <datasource caption='Chorus Dataset' inline='true' name='greenplum.41180.617203761576' version='8.0'>
       <connection class='greenplum' dbname='<%= @db_database %>' port='<%= @db_port %>' server='<%= @db_host %>' username='<%= @db_username %>'>
         <% if is_chorus_view? %>
             <relation name='TableauSQL' type='text'><%= @query %></relation>
